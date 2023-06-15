@@ -1,0 +1,2 @@
+{{ $receber->nome }}
+{{ $oferta->nome }}

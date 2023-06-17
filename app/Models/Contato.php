@@ -10,5 +10,5 @@ class Contato extends Model
     use HasFactory;
 
     protected $fillable = ['nome', 'email','fone','mensagem'];
-    protected $table = 'lojas';
+    protected $table = 'contatos';
 }

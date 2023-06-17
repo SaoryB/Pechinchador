@@ -17,14 +17,14 @@ class LojasController extends Controller
     }
 
     public function listar(){
-        $lojas = Loja::paginate(25);
-        Paginator::useBootstrap();
 
-        return view('loja.lista', compact('lojas'));
-        //$tipos = Tipo::all();
-        // return view('tipo', ['tipos' => $tipos]);
-    }
 
+    $lojas = Loja::paginate(25);
+    Paginator::useBootstrap();
+
+    return view('loja.lista', compact('lojas'));
+
+}
     public function create(){
         return view('loja.formulario');
     }

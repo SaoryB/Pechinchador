@@ -16,7 +16,7 @@ class ViewpublicaController extends Controller
 
     public function index()
     {
-        $ofertas = Oferta::with('loja', 'subcategoria', 'produto')->paginate(25);
+        $ofertas = Oferta::with('loja', 'subcategoria', 'produto')->paginate(5);
         Paginator::useBootstrap();
         return view('viewpublica.lista', compact('ofertas'));
     }

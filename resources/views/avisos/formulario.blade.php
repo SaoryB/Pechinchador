@@ -7,9 +7,6 @@
             <div class="card">
                 <div class="card-header">
                     Dados de Cadastro Para Ofertas
-                    <a href="{{ url('aviso') }}" class="btn btn-success btn-sm float-end">
-                        Listar Cadastro Para Ofertas
-                    </a>
                 </div>
                 <div class="card-body">
                     @if(Session::has('mensagem_sucesso'))

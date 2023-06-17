@@ -35,7 +35,7 @@
                                 <a href="{{ url('categoria') }}" class="nav-link">Categorias</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ url('subcategoria') }}" class="nav-link">Subcategorias</a>
+                                <a href="{{ url('subcategorias') }}" class="nav-link">Subcategorias</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ url('loja') }}" class="nav-link">
@@ -47,13 +47,18 @@
                                     </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ url('oferta') }}" class="nav-link">
+                                <a href="{{ url('ofertas') }}" class="nav-link">
                                     Ofertas
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ url('receberoferta') }}" class="nav-link">
                                     E-mail p/Disparo
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('contato') }}" class="nav-link">
+                                    Contatos
                                 </a>
                             </li>
                         @endauth

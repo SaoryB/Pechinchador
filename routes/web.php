@@ -9,6 +9,7 @@ use App\Http\Controllers\SubcategoriasController;
 use App\Http\Controllers\ViewpublicaController;
 use App\Http\Controllers\ContatosController;
 use App\Http\Controllers\AvisosController;
+use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -45,8 +46,10 @@ Route::get('/', function () {
     Route::resource('receberoferta',ReceberofertasController::class);
     Route::resource('subcategorias',SubcategoriasController::class);
     Route::resource('ofertas',OfertasController::class);
+    Route::get('/ofertas/create', [OfertasController::class, 'create'])->name('oferas.create');
     Route::get('contatos',[ContatosController::class,'index']);
     Route::post('contatos',[ContatosController::class, 'enviar']);
+    Route::resource('contato',ContatoController::class);
 
 });
 Route::resource('verofertas',ViewpublicaController::class);

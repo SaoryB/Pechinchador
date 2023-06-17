@@ -28,7 +28,7 @@
                                             ['method'=>'PATCH',
                                             'url'=>'oferta/'.$oferta->id]) !!}
                         @else
-                            {!! Form::open(['method'=>'POST', 'url'=>'ofertas']) !!}
+                            {!! Form::open(['method'=>'POST', 'url'=>'oferta']) !!}
                         @endif
                         {!! Form::label('subcategoria_id', "Subcategoria") !!}
                         {!! Form::select('subcategoria_id',

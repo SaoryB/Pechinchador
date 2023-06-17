@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Contato;
-use Functions;
+use App\Models\Functions;
 
 class ContatosController extends Controller
 {
@@ -18,12 +18,6 @@ class ContatosController extends Controller
 
     public function enviar(Request $request)
     {
-        $contato = new Contato();
-        $contato->nome = $request->nome;
-        $contato->email = $request->email;
-        $contato->fone = $request->fone;
-        $contato->mensagem = $request->mensagem;
-        $contato->save();
 
         $dest_name = "Saory";
         $dest_email = "saory.bonacolse@gmail.com";
@@ -36,12 +30,29 @@ class ContatosController extends Controller
 
         $funcoes = new Functions();
         $bcc = ['saory.bonacolse@gmail.com'];
-        if ($funcoes->sendEmail($dest_email, $dest_name, "E-mail do site da Famper!",
-                            $dados, $request['email'], $request['nome'], $bcc, 'email.contato')){
+        if ($funcoes->sendEmail(
+            $dest_email,
+            $dest_name,
+            "E-mail do site da Famper!",
+            $dados,
+            $request['email'],
+            $request['nome'],
+            $bcc,
+            'email.contato'
+        ))
+        $contatos = new Contato();
+        $contatos->nome = $request->nome;
+        $contatos->email = $request->email;
+        $contatos->fone = $request->fone;
+        $contatos->mensagem = $request->mensagem;
+        $contatos->save();
+        {
 
-                return Redirect::to('contatos')
-                ->with('mensagem_sucesso', 'E-mail enviado com sucesso!');
+            return Redirect::to('contatos')
+            ->with('mensagem_sucesso', 'E-mail enviado com sucesso!');
         }
+    }
+}
 /*
         Mail::send(
             'email.contato',
@@ -56,5 +67,3 @@ class ContatosController extends Controller
             }
         );
         */
-    }
-}

@@ -37,7 +37,7 @@
                                         <td>{{ $oferta->subcategoria->nome }}</td>
                                         <td>{{ $oferta->produto->nome }}</td>
                                         <td>{{ $oferta->descricao }}</td>
-                                        <td><img src="uploads/ofertas/{{ $oferta->imagemproduto }}" height="25" alt=""></td>
+                                        <td><img src="uploads/ofertas/{{ $oferta->imagemproduto }}" height="50" alt=""></td>
                                         <td>{{ $oferta->datavencimento }}</td>
                                         <td>{{ $oferta->link }}</td>
                                         <td>{{ $oferta->loja->nome }}</td>
